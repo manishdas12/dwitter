@@ -11,6 +11,10 @@ contract Dwitter {
         string bio;
         string avatar;
     }
+    struct Dweet {
+        address wallet;
+        string dweetContent;
+    }
     mapping(address => string) public usernames;
     mapping(string => User) public users;
 
@@ -27,6 +31,9 @@ contract Dwitter {
             avatar: _avatar
         });
         usernames[msg.sender] = _username;
+    }
+    function dweet(string memory _dweetContent) public {
+        require(condition);
     }
     function getUser(address _wallet) public view returns (User memory) {
         return users[usernames[_wallet]];
